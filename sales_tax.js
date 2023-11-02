@@ -41,8 +41,18 @@ function processEntries() {
     // range check
     if (subtotal < 0 || subtotal > 10000) {
         alert("Subtotal must be > 0 and < 10000");
+
+        const input = document.getElementById('subtotal');
+        const end = input.value.length;
+        input.setSelectionRange(end, end);
+        input.focus();
     } else if (tax_rate < 0 || tax_rate > 12) {
         alert("Tax Rate must be > 0 and < 12");
+
+        const input = document.getElementById('tax_rate');
+        const end = input.value.length;
+        input.setSelectionRange(end, end);
+        input.focus();
     } else {
         const sales_tax = subtotal * tax_rate;
         const total = subtotal + sales_tax;
